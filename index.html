@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Ubuntu:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <title>Weather</title>
+  <style>
+    * {
+      margin: 0;
+      padding:8px;
+      font-family: 'Josefin Sans', sans-serif;
+      font-family: 'Ubuntu', sans-serif;
+    }
+
+    span,p,strong{
+      padding: 0;
+    }
+    strong{
+      margin: 0 8px;
+    }
+
+    body {
+      background: rgb(185, 246, 247);
+      background: linear-gradient(128deg, rgba(185, 246, 247, 1) 0%, rgba(255, 252, 0, 0.16290266106442575) 100%);
+      height:100vh;
+      text-align: center;
+      overflow-y: hidden;
+    }
+
+    #city {
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.63) !important;
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
+      padding: 4px 16px;
+      border-radius: 50px;
+      margin: 0 auto;
+      display: table;
+    }
+
+    h1 {
+      font-size: 5.5rem;
+      color: white;
+      text-shadow: 2px 2px #039b8c;
+      text-align: center;
+      position: relative;
+    }
+
+    h1::after {
+      content: 'º';
+      font-size: 2rem;
+      position: absolute;
+      top: 15p;
+    }
+
+    p {
+      text-align: center;
+    }
+
+    .d-flex {
+      display: flex;
+      justify-content: center;
+    }
+
+    .space-around {
+      justify-content: space-around;
+    }
+  </style>
+</head>
+
+<body>
+  <p id="city">...</p>
+  <strong>
+    <h1 id="temp">...</h1>
+  </strong>
+  <div class="d-flex">
+    <div class="d-flex">
+      <span>Min:</span>
+      <strong> <p id="min"> </p></strong>
+    </div>
+
+    <div class="d-flex">
+      <span>Min:</span>
+      <strong><p id="max"> </p></strong>
+    </div>
+
+  </div>
+
+  <h3 id="description"></h3>
+
+  <div class="d-flex space-around">
+    <div>
+      <h3>Vento</h3>
+      <p id="wind">...</h>
+    </div>
+
+    <div>
+      <h3>Umidade</h3>
+      <p id="humidity">...</p>
+    </div>
+  </div>
+
+</body>
+<script>
+
+  function loadPhase() {
+    fetch("https://api.hgbrasil.com/weather?format=json-cors&key=6d114bb7")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data.results.humidity);
+
+        const content = data.results;
+        console.log(content);
+        temp.innerHTML = `${content.temp}`;
+        max.innerHTML = `${content.forecast[0].max}º`;
+        min.innerHTML = `${content.forecast[0].min}º`;
+        city.innerHTML = `${content.city}`;
+        description.innerHTML = `${content.description}`;
+        wind.innerHTML = `${content.wind_speedy}`;
+        humidity.innerHTML = `${content.humidity}%`;
+
+      })
+      .catch((err) => console.log("ERROR: ", err));
+  }
+
+  loadPhase();
+
+
+
+</script>
+
+</html>
