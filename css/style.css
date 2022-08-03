@@ -1,60 +1,103 @@
 * {
-    margin: 0;
-    padding:8px;
-    font-family: 'Josefin Sans', sans-serif;
-    font-family: 'Ubuntu', sans-serif;
-  }
+  margin: 0;
+  padding: 8px;
+  font-family: 'Ubuntu', sans-serif;
+}
 
-  span,p,strong{
-    padding: 0;
-  }
-  strong{
-    margin: 0 8px;
-  }
+span, p, strong {
+  padding: 0;
+}
 
-  body {
-    background: rgb(185, 246, 247);
-    background: linear-gradient(128deg, rgba(185, 246, 247, 1) 0%, rgba(255, 252, 0, 0.16290266106442575) 100%);
-    height:100vh;
-    text-align: center;
-    overflow-y: hidden;
-  }
+strong {
+  margin: 0 8px;
+}
 
-  h1 {
-    font-size: 5.5rem;
-    color: white;
-    text-shadow: 2px 2px #039b8c;
-    text-align: center;
-    position: relative;
-  }
+body {
+  height: 100vh;
+  text-align: center;
+  overflow-y: hidden;
+  max-width: 600px;
+  margin: 0 auto;
+  color: aliceblue;
+}
 
-  h1::after {
-    content: 'º';
-    font-size: 2rem;
-    position: absolute;
-    top: 15p;
-  }
+.bg-day {
+  background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(97, 186, 255, 1) 0%, rgba(166, 239, 253, 1) 90.1%);
+}
 
-  p {
-    text-align: center;
-  }
+.bg-night {
+  background-color: #2267da;
+  background-image: linear-gradient(180deg, #2267da 0%, #ff9be4 100%);
+  background-image: url('../img/nightjpg.jpg');
+}
 
-  .d-flex {
-    display: flex;
-    justify-content: center;
-  }
+h1 {
+  font-size: 5.5rem;
+  color: white;
+  text-shadow: 2px 2px #03a9f4;
+  text-align: center;
+  position: relative;
+  font-weight: 400;
+}
 
-  .space-around {
-    justify-content: space-around;
-  }
+h1::after {
+  content: 'º';
+  font-size: 2rem;
+  position: absolute;
+  top: 15px;
+}
 
-  #city {
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.63) !important;
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    padding: 4px 16px;
-    border-radius: 50px;
-    margin: 0 auto;
-    display: table;
-  }
+p {
+  text-align: center;
+  text-shadow: 1px 1px #2196f3;
+}
+
+i {
+  font-size: 2rem;
+  color: #03a9f4;
+}
+
+.d-flex {
+  display: flex;
+  justify-content: center;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.63);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 4px;
+  padding: 8px;
+  /* color: #03a9f4; */
+  width: 80px;
+}
+
+.text-light {
+  color: #fff;
+}
+
+.wi-night-clear,.wi-day-sunny {
+  margin-top: 8px;
+  color: yellow;
+  display: none;
+}
+
+/* .wi-day-sunny{
+  color: yellow;
+  display: none;
+} */
+
+#city {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.63);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  padding: 4px 16px;
+  border-radius: 50px;
+  margin: 0 auto;
+  display: table;
+  color: #fff;
+}
