@@ -6,7 +6,12 @@ function loadWeather() {
     .then((data) => {
 
       const content = data.results;
-      console.log(content);
+      const forecast = content.forecast;
+      const elementBody = document.getElementsByClassName('bg');
+      const iconNight = document.getElementsByClassName('wi-night-clear');
+      const iconDay = document.getElementsByClassName('wi-day-sunny');
+
+      //console.log(content);
       temp.innerHTML = `${content.temp}`;
       nightOrDay.innerHTML = `${content.currently}`;
       max.innerHTML = `${content.forecast[0].max}º`;
@@ -16,9 +21,7 @@ function loadWeather() {
       wind.innerHTML = `${content.wind_speedy}`;
       humidity.innerHTML = `${content.humidity}%`;
 
-      //console.log(content.forecast[0]);
 
-      const forecast = content.forecast;
 
     for (let contador = 0; contador < forecast.length; contador++) {
       // This is for-loop
@@ -29,17 +32,12 @@ function loadWeather() {
       div_1.innerHTML = forecast[contador].weekday;
       div_2.innerHTML = `${forecast[contador].min}º/`;
       div_3.innerHTML = `${forecast[contador].max}º`;
-      //div_1.style = "font-size: 25px;";
       div1.appendChild(div_master); 
       div_master.appendChild(div_1); 
       div_master.appendChild(div_2); 
       div_master.appendChild(div_3); 
-      console.log(`${contador}`);
     }
-
-      let elementBody = document.getElementsByClassName('bg');
-      let iconNight = document.getElementsByClassName('wi-night-clear');
-      let iconDay = document.getElementsByClassName('wi-day-sunny');
+    console.log(forecast);
 
       if(content.currently === 'dia' || content.currently === 'day' ){
         elementBody[0].classList.add('bg-day');

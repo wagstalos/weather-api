@@ -49,12 +49,12 @@ h1::after {
 
 p {
   text-align: center;
-  text-shadow: 1px 1px 1px #505050
+  /* text-shadow: 1px 1px 1px #505050 */
 }
 
 i {
   font-size: 2rem;
-  color: #03a9f4;
+  color: #fff;
 }
 
 .d-flex {
@@ -67,7 +67,7 @@ i {
 }
 
 .card {
-  background-color: rgba(255, 255, 255, 0.63);
+  background-color: rgb(21 129 211 / 20%);
   -webkit-backdrop-filter: blur(20px);
   border-radius: 4px;
   padding: 8px;
@@ -79,7 +79,7 @@ i {
   color: #fff;
 }
 
-.wi-night-clear,.wi-day-sunny {
+.wi-night-clear, .wi-day-sunny {
   margin-top: 8px;
   color: yellow;
   display: none;
@@ -87,7 +87,7 @@ i {
 
 #city {
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.63);
+  background-color: rgb(21 129 211 / 20%);
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   padding: 4px 16px;
@@ -100,10 +100,26 @@ i {
 .week {
   display: flex;
   overflow-x: auto;
-  padding: 0;
+  padding: 8px 0;
   margin-top: 34px;
+  background-color: #1581d333;
+  border-radius: 4px;
+  position: relative;
 }
 
-.week p{
+.week p {
   margin-bottom: 8px;
 }
+
+/* 
+.week::after{
+  content: "";
+    position: absolute;
+    right: -4px;
+    top: 0;
+    background: linear-gradient(270deg,#5ea7e0 -16.41%, transparent);
+    
+    height: 100%;
+    width: 20%;
+    z-index: 2;
+} */
