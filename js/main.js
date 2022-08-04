@@ -4,7 +4,6 @@ function loadWeather() {
   )
     .then((res) => res.json())
     .then((data) => {
-      console.log(data.results.humidity);
 
       const content = data.results;
       console.log(content);
