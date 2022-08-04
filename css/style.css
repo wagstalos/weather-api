@@ -49,7 +49,7 @@ h1::after {
 
 p {
   text-align: center;
-  text-shadow: 1px 1px #2196f3;
+  text-shadow: 1px 1px 1px #505050
 }
 
 i {
@@ -85,11 +85,6 @@ i {
   display: none;
 }
 
-/* .wi-day-sunny{
-  color: yellow;
-  display: none;
-} */
-
 #city {
   text-align: center;
   background-color: rgba(255, 255, 255, 0.63);
@@ -100,4 +95,15 @@ i {
   margin: 0 auto;
   display: table;
   color: #fff;
+}
+
+.week {
+  display: flex;
+  overflow-x: auto;
+  padding: 0;
+  margin-top: 34px;
+}
+
+.week p{
+  margin-bottom: 8px;
 }

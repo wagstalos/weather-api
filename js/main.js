@@ -16,11 +16,32 @@ function loadWeather() {
       wind.innerHTML = `${content.wind_speedy}`;
       humidity.innerHTML = `${content.humidity}%`;
 
-      var elementBody = document.getElementsByClassName('bg');
-      var iconNight = document.getElementsByClassName('wi-night-clear');
-      var iconDay = document.getElementsByClassName('wi-day-sunny');
+      //console.log(content.forecast[0]);
 
-      if(content.currently === 'dia'){
+      const forecast = content.forecast;
+
+    for (let contador = 0; contador < forecast.length; contador++) {
+      // This is for-loop
+      const div_master = document.createElement("div");
+      const div_1 = document.createElement("p");
+      const div_2 = document.createElement("span");
+      const div_3 = document.createElement("span");
+      div_1.innerHTML = forecast[contador].weekday;
+      div_2.innerHTML = `${forecast[contador].min}º/`;
+      div_3.innerHTML = `${forecast[contador].max}º`;
+      //div_1.style = "font-size: 25px;";
+      div1.appendChild(div_master); 
+      div_master.appendChild(div_1); 
+      div_master.appendChild(div_2); 
+      div_master.appendChild(div_3); 
+      console.log(`${contador}`);
+    }
+
+      let elementBody = document.getElementsByClassName('bg');
+      let iconNight = document.getElementsByClassName('wi-night-clear');
+      let iconDay = document.getElementsByClassName('wi-day-sunny');
+
+      if(content.currently === 'dia' || content.currently === 'day' ){
         elementBody[0].classList.add('bg-day');
         iconNight[0].style.display = "none";
         iconDay[0].style.display = "block";
