@@ -62,8 +62,8 @@ i {
   justify-content: center;
 }
 
-.space-around {
-  justify-content: space-around;
+.space-evenly {
+  justify-content:space-evenly;
 }
 
 .card {
@@ -80,7 +80,6 @@ i {
 }
 
 .wi-night-clear, .wi-day-sunny {
-  margin-top: 8px;
   color: yellow;
   display: none;
 }
@@ -99,6 +98,7 @@ i {
 
 .week {
   display: flex;
+  justify-content: center;
   overflow-x: auto;
   padding: 8px 0;
   margin-top: 34px;
@@ -111,15 +111,8 @@ i {
   margin-bottom: 8px;
 }
 
-/* 
-.week::after{
-  content: "";
-    position: absolute;
-    right: -4px;
-    top: 0;
-    background: linear-gradient(270deg,#5ea7e0 -16.41%, transparent);
-    
-    height: 100%;
-    width: 20%;
-    z-index: 2;
-} */
+@media only screen and (min-width: 1000px) {
+  body {
+    max-width: 800px;
+  }
+}
