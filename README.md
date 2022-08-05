@@ -4,9 +4,13 @@
     <a href="https://wpsgames.com.br/sites/api-weather-v2/">🔗 link  do projeto</a>
 </h1>
 
-## Descrição do Projeto
+## Quem sou
 
-<p align="center">Olá, sou Wagner Paulo, profissional da área Desenvolvimento Web e Games, formado em Design Gráfico (UNIP) e Desenvolvimento Jogos Digitais(ETEC). Apaixonado por tecnologias, trabalho com produção de sites, aplicativos, PWA e jogos digitais com foco para o ensino EaD, neste projeto eu criei um site para uma professora de espanhol.</p>
+<p>Olá, sou Wagner Paulo, profissional da área Desenvolvimento Web e Games, formado em Design Gráfico (UNIP) e Desenvolvimento Jogos Digitais(ETEC). Apaixonado por tecnologias, trabalho com produção de sites, aplicativos, PWA e jogos digitais com foco para o ensino EaD, neste projeto eu criei um site para uma professora de espanhol.</p>
+
+## Descrição
+
+<p>Consumindo APi de tempo via javascript https://api.hgbrasil.com/weather</p>
 
 <h1 align="center">
 <img src="https://img.shields.io/static/v1?label=Site&message=API Externa&color=3498db&style=for-the-badge&logo="/>
