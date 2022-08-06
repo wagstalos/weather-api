@@ -1,7 +1,6 @@
 function loadWeather() {
-  fetch(
-    "https://api.hgbrasil.com/weather?format=json-cors&key=6d114bb7&user_ip=remote"
-  )
+  let baseURL = "https://api.hgbrasil.com/weather?format=json-cors&key=6d114bb7&user_ip=remote";
+  fetch(baseURL)
     .then((res) => res.json())
     .then((data) => {
       const content = data.results;
@@ -10,51 +9,48 @@ function loadWeather() {
       const iconNight = document.getElementsByClassName("wi-night-clear");
       const iconDay = document.getElementsByClassName("wi-day-sunny");
 
-      //console.log(content);
-      temp.innerHTML = `${content.temp}`;
+      console.log(content);
+      temp.textContent = `${content.temp}`;
       nightOrDay.innerHTML = `${content.currently}`;
-      max.innerHTML = `${content.forecast[0].max}º`;
-      min.innerHTML = `${content.forecast[0].min}º`;
-      city.innerHTML = `${content.city}`;
-      description.innerHTML = `${content.description}`;
-      wind.innerHTML = `${content.wind_speedy}`;
-      humidity.innerHTML = `${content.humidity}%`;
+      max.textContent = `${content.forecast[0].max}º`;
+      min.textContent = `${content.forecast[0].min}º`;
+      city.textContent = `${content.city}`;
+      description.textContent = `${content.description}`;
+      wind.textContent = `${content.wind_speedy}`;
+      humidity.textContent = `${content.humidity}%`;
 
       for (let contador = 0; contador < forecast.length; contador++) {
         // This is for-loop
         const div_master = document.createElement("div");
-        const div_1 = document.createElement("p");
         const icon = document.createElement("i");
-        const div_2 = document.createElement("span");
-        const div_3 = document.createElement("span");
-        // icon.innerHTML = forecast[contador].description;
-        div_1.innerHTML = forecast[contador].weekday;
-        div_2.innerHTML = `${forecast[contador].min}º/`;
-        div_3.innerHTML = `${forecast[contador].max}º`;
+        const dayOfWeek = document.createElement("p");
+        const tempMin = document.createElement("span");
+        const tempMax = document.createElement("span");
+        
+        dayOfWeek.textContent = forecast[contador].weekday;
+        tempMin.textContent = `${forecast[contador].min}º/`;
+        tempMax.textContent = `${forecast[contador].max}º`;
+        
         div1.appendChild(div_master);
         div_master.appendChild(icon);
-        div_master.appendChild(div_1);
-        div_master.appendChild(div_2);
-        div_master.appendChild(div_3);
+        div_master.appendChild(dayOfWeek);
+        div_master.appendChild(tempMin);
+        div_master.appendChild(tempMax);
 
         var iconWeather = forecast[contador].description;
         icon.classList.add("wi");
 
-        if (iconWeather === "Tempo nublado") {
+        if (iconWeather === "Tempo nublado" || iconWeather === "Day mostly cloudy" ) {
           icon.classList.add("wi-cloudy");
-        } else if (iconWeather === "Chuvas esparsas") {
+        } else if (iconWeather === "Chuvas esparsas" || iconWeather === "Scattered showers") {
           icon.classList.add("wi-showers");
-        } else if (iconWeather === "Chuva") {
+        } else if (iconWeather === "Chuva" || iconWeather === "Thundershowers") {
           icon.classList.add("wi-rain");
-        } else if (iconWeather === "Parcialmente nublado") {
+        } else if (iconWeather === "Parcialmente nublado" || iconWeather === "Night partly cloudy") {
           icon.classList.add("wi-cloud");
-        }else if(content.currently === "dia" || content.currently === "day" && iconWeather === "Tempo limpo"){
+        }else if( iconWeather === "Tempo limpo" || iconWeather === "Night Mostly cloudy"){
           icon.classList.add("wi-day-sunny");
           iconDay[1].style.display = "block";
-        }else if (content.currently === "noite" || content.currently === "night" && iconWeather === "Tempo limpo"){
-          icon.classList.add("wi-night-clear");
-          iconNight[1].style.display = "block";
-          iconNight[1].style.color = "white";
         }else {
           icon.classList.add("wi-na");
         }

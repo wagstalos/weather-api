@@ -98,7 +98,7 @@ i {
 
 .week {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   overflow-x: auto;
   padding: 8px 0;
   margin-top: 34px;
@@ -114,5 +114,8 @@ i {
 @media only screen and (min-width: 1000px) {
   body {
     max-width: 800px;
+  }
+  .week {
+justify-content: center;
   }
 }
