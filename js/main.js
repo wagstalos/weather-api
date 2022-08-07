@@ -59,19 +59,62 @@ function loadWeather() {
 
       console.log(forecast);
 
-      if (content.currently === "dia" || content.currently === "day") {
-        elementBody[0].classList.add("bg-day");
-        iconNight[0].style.display = "none";
-        iconDay[0].style.display = "block";
+      // if (content.currently === "dia" || content.currently === "day") {
+      //   elementBody[0].classList.add("bg-day");
+      //   iconNight[0].style.display = "none";
+      //   iconDay[0].style.display = "block";
 
-        if (iconWeather === "Tempo limpo") {
-          icon.classList.add("wi-cloudy");
-        }
-      } else {
-        elementBody[0].classList.add("bg-night");
-        iconNight[0].style.display = "block";
-        iconDay[0].style.display = "none";
+      //   if (iconWeather === "Tempo limpo") {
+      //     icon.classList.add("wi-cloudy");
+      //   }
+      // } else {
+      //   elementBody[0].classList.add("bg-night");
+      //   iconNight[0].style.display = "block";
+      //   iconDay[0].style.display = "none";
+      // }
+
+      if(content.condition_slug === "cloudly_day" || content.condition_slug === "cloud" || content.condition_slug === "cloudly_night"){
+          elementBody[0].classList.add("bg-scattered-rains");
+          const iconConditionSlug = document.createElement("i");
+          iconConditionSlug.classList.add("wi");
+          condition_slug.appendChild(iconConditionSlug);
+          iconConditionSlug.classList.add("wi-cloudy");
+      } 
+      else if(content.condition_slug === "clear_day"){
+          elementBody[0].classList.add("bg-day");
+          const iconConditionSlug = document.createElement("i");
+          iconConditionSlug.classList.add("wi");
+          condition_slug.appendChild(iconConditionSlug);
+          iconConditionSlug.classList.add("wi-day-sunny");
       }
+      else if(content.condition_slug === "clear_night"){
+          elementBody[0].classList.add("bg-night");
+          const iconConditionSlug = document.createElement("i");
+          iconConditionSlug.classList.add("wi");
+          condition_slug.appendChild(iconConditionSlug);
+          iconConditionSlug.classList.add("wi-night-clear");
+      }
+      else if(content.condition_slug === "fog"){
+          elementBody[0].classList.add("bg-scattered-rains");
+          const iconConditionSlug = document.createElement("i");
+          iconConditionSlug.classList.add("wi");
+          condition_slug.appendChild(iconConditionSlug);
+          iconConditionSlug.classList.add("wi-fog");
+    }
+      else if(content.condition_slug === "rain"){
+          elementBody[0].classList.add("bg-scattered-rains");
+          const iconConditionSlug = document.createElement("i");
+          iconConditionSlug.classList.add("wi");
+          condition_slug.appendChild(iconConditionSlug);
+          iconConditionSlug.classList.add("wi-rain");
+      }else{
+          elementBody[0].classList.add("bg-neutral");
+          const iconConditionSlug = document.createElement("i");
+          iconConditionSlug.classList.add("wi");
+          condition_slug.appendChild(iconConditionSlug);
+          iconConditionSlug.classList.add("na");
+        }
+
     })
     .catch((err) => console.log("ERROR: ", err));
 }

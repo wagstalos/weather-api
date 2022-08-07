@@ -21,6 +21,10 @@ body {
   color: aliceblue;
 }
 
+.bg-neutral{
+  background-color: rebeccapurple;
+}
+
 .bg-day {
   background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(97, 186, 255, 1) 0%, rgba(166, 239, 253, 1) 90.1%);
 }
@@ -31,10 +35,15 @@ body {
   background-image: url('../img/nightjpg.jpg');
 }
 
+.bg-scattered-rains{
+  background-color: #2267da;
+  background-image: linear-gradient(180deg, #c8d6ec 0%, #414141 100%);
+}
+
 h1 {
   font-size: 5.5rem;
   color: white;
-  text-shadow: 2px 2px #03a9f4;
+  text-shadow: 2px 2px #979797;
   text-align: center;
   position: relative;
   font-weight: 400;
@@ -67,11 +76,10 @@ i {
 }
 
 .card {
-  background-color: rgb(21 129 211 / 20%);
+  background-color: rgb(255 255 2555 / 20%);
   -webkit-backdrop-filter: blur(20px);
   border-radius: 4px;
   padding: 8px;
-  /* color: #03a9f4; */
   width: 80px;
 }
 
@@ -86,7 +94,7 @@ i {
 
 #city {
   text-align: center;
-  background-color: rgb(21 129 211 / 20%);
+  background-color: rgb(255 255 255 / 20%);
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   padding: 4px 16px;
@@ -102,7 +110,7 @@ i {
   overflow-x: auto;
   padding: 8px 0;
   margin-top: 34px;
-  background-color: #1581d333;
+  background-color: rgb(255 255 255 / 20%);
   border-radius: 4px;
   position: relative;
 }
