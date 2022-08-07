@@ -10,6 +10,8 @@ function loadWeather() {
       const iconDay = document.getElementsByClassName("wi-day-sunny");
 
       console.log(content);
+      sunrise.textContent = `${content.sunrise}`;
+      sunset.textContent = `${content.sunset}`;
       temp.textContent = `${content.temp}`;
       nightOrDay.innerHTML = `${content.currently}`;
       max.textContent = `${content.forecast[0].max}º`;
@@ -120,3 +122,5 @@ function loadWeather() {
 }
 
 loadWeather();
+
+
