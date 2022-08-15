@@ -6,8 +6,6 @@ function loadWeather() {
       const content = data.results;
       const forecast = content.forecast;
       const elementBody = document.getElementsByClassName("bg");
-      const iconNight = document.getElementsByClassName("wi-night-clear");
-      const iconDay = document.getElementsByClassName("wi-day-sunny");
 
       console.log(content);
       sunrise.textContent = `${content.sunrise}`;
@@ -52,28 +50,14 @@ function loadWeather() {
           icon.classList.add("wi-cloud");
         }else if( iconWeather === "Tempo limpo" || iconWeather === "Night Mostly cloudy"){
           icon.classList.add("wi-day-sunny");
-          iconDay[1].style.display = "block";
+          //iconDay[1].style.display = "block";
         }else {
           icon.classList.add("wi-na");
         }
-        //console.log(content.currently);
+
       }
 
       console.log(forecast);
-
-      // if (content.currently === "dia" || content.currently === "day") {
-      //   elementBody[0].classList.add("bg-day");
-      //   iconNight[0].style.display = "none";
-      //   iconDay[0].style.display = "block";
-
-      //   if (iconWeather === "Tempo limpo") {
-      //     icon.classList.add("wi-cloudy");
-      //   }
-      // } else {
-      //   elementBody[0].classList.add("bg-night");
-      //   iconNight[0].style.display = "block";
-      //   iconDay[0].style.display = "none";
-      // }
 
       if(content.condition_slug === "cloudly_day" || content.condition_slug === "cloud" || content.condition_slug === "cloudly_night"){
           elementBody[0].classList.add("bg-scattered-rains");
@@ -122,5 +106,3 @@ function loadWeather() {
 }
 
 loadWeather();
-
-

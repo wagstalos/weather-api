@@ -17,12 +17,17 @@ strong {
 }
 
 body {
-  /* height: 100vh; */
+  height: 100vh;
   text-align: center;
   overflow-x: hidden;
-  max-width: 600px;
+  max-width: 900px;
   margin: 0 auto;
   color: aliceblue;
+  padding: 0;
+}
+
+html{
+  padding: 8px;
 }
 
 h1 {
@@ -90,7 +95,7 @@ i {
 }
 
 .bg-scattered-rains {
-  background-color: #2267da;
+  background-color: #414141;
   background-image: linear-gradient(180deg, #c8d6ec 0%, #414141 100%);
 }
 
@@ -118,7 +123,6 @@ i {
 
 .wi-night-clear, .wi-day-sunny {
   color: yellow;
-  display: none;
 }
 
 #city {
@@ -147,7 +151,7 @@ i {
 
 @media only screen and (min-width: 1000px) {
   body {
-    max-width: 800px;
+    max-width: 900px;
   }
 
   .week {
