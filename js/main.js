@@ -1,5 +1,6 @@
 function loadWeather() {
   let baseURL = "https://api.hgbrasil.com/weather?format=json-cors&key=6d114bb7&user_ip=remote";
+
   fetch(baseURL)
     .then((res) => res.json())
     .then((data) => {
@@ -50,7 +51,6 @@ function loadWeather() {
           icon.classList.add("wi-cloud");
         }else if( iconWeather === "Tempo limpo" || iconWeather === "Night Mostly cloudy"){
           icon.classList.add("wi-day-sunny");
-          //iconDay[1].style.display = "block";
         }else {
           icon.classList.add("wi-na");
         }
@@ -62,7 +62,7 @@ function loadWeather() {
       if(content.condition_slug === "cloudly_day" || content.condition_slug === "cloud" || content.condition_slug === "cloudly_night"){
           elementBody[0].classList.add("bg-scattered-rains");
           const iconConditionSlug = document.createElement("i");
-          iconConditionSlug.classList.add("wi");
+          iconConditionSlug.classList.add("wi p-8");
           condition_slug.appendChild(iconConditionSlug);
           iconConditionSlug.classList.add("wi-cloudy");
       } 

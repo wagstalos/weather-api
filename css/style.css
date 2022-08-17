@@ -1,11 +1,12 @@
 :root {
   --background-text: rgb(0 0 0 / 10%);
+  --white:#fff;
 }
 
 * {
   margin: 0;
-  padding: 8px;
   font-family: 'Ubuntu', sans-serif;
+  padding: 8px;
 }
 
 span, p, strong {
@@ -22,18 +23,19 @@ body {
   overflow-x: hidden;
   max-width: 900px;
   margin: 0 auto;
-  color: aliceblue;
+  color: var(--white);;
   padding: 0;
+  overflow-x: hidden
 }
 
 html{
   padding: 8px;
+  overflow-x: hidden
 }
 
 h1 {
   font-size: 5.5rem;
-  color: white;
-  /* text-shadow: 2px 2px #979797; */
+  color: var(--white);
   text-align: center;
   position: relative;
   font-weight: 400;
@@ -48,12 +50,15 @@ h1::after {
 
 p {
   text-align: center;
-  /* text-shadow: 1px 1px 1px #505050 */
 }
 
 i {
   font-size: 2rem;
-  color: #fff;
+  color: var(--white);;
+}
+
+.p-8{
+  padding: 8px;
 }
 
 .sunrise {
@@ -118,7 +123,7 @@ i {
 }
 
 .text-light {
-  color: #fff;
+  color: var(--white);;
 }
 
 .wi-night-clear, .wi-day-sunny {
@@ -131,7 +136,7 @@ i {
   border-radius: 50px;
   margin: 0 auto;
   display: table;
-  color: #fff;
+  color: var(--white);;
   font-size: 12px;
 }
 
