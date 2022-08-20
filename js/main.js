@@ -41,19 +41,18 @@ function loadWeather() {
         var iconWeather = forecast[contador].description;
         icon.classList.add("wi");
 
-        if (iconWeather === "Tempo nublado" || iconWeather === "Day mostly cloudy" ) {
+        if (iconWeather === "Tempo nublado" || iconWeather === "Day mostly cloudy" ) 
           icon.classList.add("wi-cloudy");
-        } else if (iconWeather === "Chuvas esparsas" || iconWeather === "Scattered showers") {
+        else if (iconWeather === "Chuvas esparsas" || iconWeather === "Scattered showers") 
           icon.classList.add("wi-showers");
-        } else if (iconWeather === "Chuva" || iconWeather === "Thundershowers") {
+        else if (iconWeather === "Chuva" || iconWeather === "Thundershowers") 
           icon.classList.add("wi-rain");
-        } else if (iconWeather === "Parcialmente nublado" || iconWeather === "Night partly cloudy") {
+        else if (iconWeather === "Parcialmente nublado" || iconWeather === "Night partly cloudy") 
           icon.classList.add("wi-cloud");
-        }else if( iconWeather === "Tempo limpo" || iconWeather === "Night Mostly cloudy"){
+        else if( iconWeather === "Tempo limpo" || iconWeather === "Night Mostly cloudy")
           icon.classList.add("wi-day-sunny");
-        }else {
+        else 
           icon.classList.add("wi-na");
-        }
 
       }
 
