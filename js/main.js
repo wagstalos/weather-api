@@ -56,8 +56,6 @@ function loadWeather() {
 
       }
 
-      console.log(forecast);
-
       if(content.condition_slug === "cloudly_day" || content.condition_slug === "cloud" || content.condition_slug === "cloudly_night"){
           elementBody[0].classList.add("bg-scattered-rains");
           const iconConditionSlug = document.createElement("i");
